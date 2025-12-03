@@ -16,13 +16,11 @@ export default function Hero() {
               <p key={index} className="mb-4">{paragraph}</p>
             ))}
           </div>
-
-          {personalInfo.announcement && (
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-              <p className="font-semibold">Join us!</p>
-              <p className="text-sm mt-2">{personalInfo.announcement}</p>
-            </div>
-          )}
+          
+          <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 mb-6">
+            <p className="mb-2">&ldquo;Science is the belief in the ignorance of experts.&rdquo;</p>
+            <footer className="text-sm text-gray-500">— Richard Feynman</footer>
+          </blockquote>
         </div>
 
         <div className="md:col-span-1">
@@ -40,12 +38,15 @@ export default function Hero() {
             )}
             
             <div className="text-sm space-y-2">
-              <p>{personalInfo.office}</p>
-              <p>{personalInfo.address.line1}</p>
-              <p>{personalInfo.address.line2}</p>
+              {personalInfo.office && <p>{personalInfo.office}</p>}
+              {personalInfo.address.line1 && <p>{personalInfo.address.line1}</p>}
+              {personalInfo.address.line2 && <p>{personalInfo.address.line2}</p>}
               <p className="mt-4">
-                <a href={`mailto:${personalInfo.email}`} className="text-primary">
-                  {personalInfo.email}
+                <a href={`mailto:${personalInfo.email}`} className="text-primary hover:underline inline-flex items-center gap-1">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Email
                 </a>
               </p>
             </div>

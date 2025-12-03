@@ -6,12 +6,7 @@ export default function Publications() {
 
   return (
     <section className="mb-12">
-      <h2 className="text-3xl font-bold mb-4">selected publications</h2>
-      <p className="text-gray-600 mb-8 italic">
-        The aim is to highlight a small subset of work, and to give a sense for the sorts of 
-        problems being worked on. Please see Google Scholar for a complete and up-to-date list 
-        of publications.
-      </p>
+      <h2 className="text-3xl font-bold mb-6">selected recent publications</h2>
 
       {years.map((year) => (
         <div key={year} className="mb-12">
@@ -36,6 +31,10 @@ export default function Publications() {
                   <h4 className="font-semibold text-lg mb-2">{pub.title}</h4>
                   <p className="text-gray-700 mb-2">{pub.authors}</p>
                   <p className="text-gray-600 italic mb-3">{pub.venue}</p>
+                  
+                  {pub.description && (
+                    <p className="text-gray-700 mb-4 text-sm leading-relaxed">{pub.description}</p>
+                  )}
                   
                   <div className="flex gap-3 text-sm">
                     {pub.pdf && (

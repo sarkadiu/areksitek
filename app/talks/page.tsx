@@ -1,13 +1,13 @@
 export default function Talks() {
   return (
     <div>
-      <h1>Talks & Podcasts</h1>
+      <h1>Talks & Presentations</h1>
 
       <h2>Invited Talks</h2>
       <div className="space-y-6 mb-8">
         <div>
-          <h3>Talk Title at Conference/University</h3>
-          <p className="text-gray-600">Date, Location</p>
+          <h3>AI-Driven Solutions in Medical Imaging</h3>
+          <p className="text-gray-600">Massachusetts General Hospital, 2024</p>
           <p className="mt-2">
             <a href="#" className="text-primary mr-4">Slides</a>
             <a href="#" className="text-primary">Video</a>
@@ -15,43 +15,42 @@ export default function Talks() {
         </div>
 
         <div>
-          <h3>Another Talk Title</h3>
-          <p className="text-gray-600">Date, Location</p>
+          <h3>Statistical Computing in Nuclear Imaging</h3>
+          <p className="text-gray-600">University of British Columbia, 2023</p>
           <p className="mt-2">
             <a href="#" className="text-primary mr-4">Slides</a>
-            <a href="#" className="text-primary">Video</a>
           </p>
         </div>
       </div>
 
-      <h2>Podcasts & Interviews</h2>
+      <h2>Conference Presentations</h2>
       <div className="space-y-6">
         <div>
-          <h3>Podcast Name</h3>
-          <p className="text-gray-600">Date</p>
+          <h3>Advanced Methods in Medical Image Analysis</h3>
+          <p className="text-gray-600">2024</p>
           <p className="mt-2">
-            <a href="#" className="text-primary">Listen</a>
+            <a href="#" className="text-primary">Slides</a>
           </p>
         </div>
 
         <div>
-          <h3>Interview Title</h3>
-          <p className="text-gray-600">Date</p>
+          <h3>AI Applications in Healthcare</h3>
+          <p className="text-gray-600">2023</p>
           <p className="mt-2">
-            <a href="#" className="text-primary">Watch/Read</a>
+            <a href="#" className="text-primary">Slides</a>
           </p>
         </div>
       </div>
 
-      <h2 className="mt-8">Tutorials</h2>
+      <h2 className="mt-8">Tutorials & Workshops</h2>
       <div className="space-y-4">
         <div>
-          <h3>Tutorial on Your Research Area</h3>
+          <h3>Introduction to Statistical Computing in Medical Imaging</h3>
           <p className="text-gray-700 mb-2">
-            A comprehensive tutorial covering [topic].
+            A comprehensive tutorial covering statistical methods and computational techniques for medical imaging applications.
           </p>
           <p>
-            <a href="#" className="text-primary">View Tutorial</a>
+            <a href="#" className="text-primary">View Materials</a>
           </p>
         </div>
       </div>

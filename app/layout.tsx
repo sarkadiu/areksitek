@@ -4,8 +4,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Your Name - Academic Portfolio",
-  description: "Personal academic website",
+  title: "Arkadiusz Sitek - Research Scientist",
+  description: "Personal website of Arkadiusz Sitek - Research in AI-driven medical imaging and healthcare applications",
 };
 
 export default function RootLayout({
