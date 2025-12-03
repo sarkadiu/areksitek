@@ -171,7 +171,7 @@ export default function Projects() {
             <li><span className="font-semibold">Quantitative Finance</span> — Mathematical modeling and machine learning for financial markets and trading strategies</li>
             <li><span className="font-semibold">Drug Discovery</span> — Computational methods for accelerating drug discovery and therapeutic target identification</li>
             <li><span className="font-semibold">AI Assistance in Surgery</span> — Real-time AI tools to assist surgeons during procedures</li>
-            <li><span className="font-semibold">Data Visualization</span> — Innovative visual representations of complex data and computational art</li>
+            <li><span className="font-semibold">Data Visualization</span> — Innovative visual representations of data</li>
             <li><span className="font-semibold">Virtual Reality</span> — VR applications in medicine, training, and immersive data exploration</li>
           </ul>
         </div>
