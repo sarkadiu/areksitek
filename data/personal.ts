@@ -12,9 +12,10 @@ export const personalInfo = {
     line1: "55 Fruit Street, Suite 427",
     line2: "Boston, MA 02114, USA"
   },
-  photo: "/headshot.jpeg",
+  photo: "/headshot.png",
   bio: [
-    "My research focuses on translational healthcare data science, specifically developing AI-driven solutions to improve clinical practice and patient outcomes. I work with diverse biomedical data including medical imaging (X-ray, CT, US, MRI, and SPECT/PET scans), clinical data from electronic health records (EHRs), omics data (genomics, proteomics, metabolomics), physiological time series, and behavioral data.",   
+    "I develop AI methods that connect biomedical data with clinical practice. My research spans medical imaging, electronic health records, omics, physiological time series, and behavioral data, with the aim of improving patient care.",
+    "A current focus is patient health timeline modeling: learning from clinical events to simulate possible health trajectories. This work includes ETHOS and adaptive risk estimation, alongside open data standards for reproducible healthcare AI.",
   ]
 };
 

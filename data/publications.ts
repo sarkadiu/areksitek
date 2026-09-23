@@ -3,6 +3,9 @@ export interface Publication {
   authors: string;
   venue: string;
   description?: string;
+  type?: string;
+  doi?: string;
+  pubmed?: string;
   pdf?: string;
   code?: string;
   website?: string;
@@ -15,13 +18,36 @@ export interface PublicationsByYear {
 }
 
 export const publications: PublicationsByYear = {
+  // Metadata verified against NEJM AI and PubMed on September 23, 2026.
+  "2026": [
+    {
+      title: "Beyond language: generative artificial intelligence as a general computing model for medicine",
+      authors: "Arkadiusz Sitek and David W. Bates",
+      venue: "The Lancet Digital Health, 8(8), 101011, 2026",
+      type: "Viewpoint",
+      description: "A perspective on learning directly from tokenized medical data. Using ETHOS as an example, we discuss patient health timeline models as a foundation for simulating clinical trajectories and sharing models across institutions without sharing patient data.",
+      doi: "10.1016/j.landig.2026.101011",
+      website: "https://doi.org/10.1016/j.landig.2026.101011",
+      pubmed: "https://pubmed.ncbi.nlm.nih.gov/42259738/"
+    },
+    {
+      title: "MEDS — An Emerging Data Standard and Ecosystem for Health AI Research",
+      authors: "Matthew B. A. McDermott, Ethan Steinberg, Jason A. Fries, Robin P. van de Water, Chao Pang, Patrick Rockenschaub, Pawel Renc, Jungwoo Oh, Kamilė Stankevičiūtė, Justin Xu, Tom J. Pollard, Nassim Oufattole, Michael Wornow, Teya S. Bergamaschi, Hyewon Jeong, Simon A. Lee, Vincent Jeanselme, Kiril V. Klein, Mikkel Odgaard, Maria E. Montgomery, Arkadiusz Sitek, Mads Nielsen, Jeffrey N. Chiang, Noa Dagan, Isaac Kohane, Shalmali Joshi, Edward Choi, and Nigam H. Shah",
+      venue: "NEJM AI, 3(6), 2026",
+      type: "Review Article",
+      description: "The Medical Event Data Standard (MEDS) provides a shared, open-source foundation for health AI research. This review describes the standard, its growing ecosystem, and its role in reproducible workflows and foundation model development.",
+      doi: "10.1056/AIra2501253",
+      website: "https://doi.org/10.1056/AIra2501253"
+    }
+  ],
   "2025": [
     {
       title: "Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation",
       authors: "Szymon Płotka, Gizem Mert, Maciej Chrabaszcz, Ewa Szczurek, and Arkadiusz Sitek",
       venue: "NeurIPS 2025",
-      description: "We introduce Hierarchical Soft Mixture-of-Experts (HoME), a novel two-level token-routing architecture for efficient 3D medical image segmentation across diverse modalities (CT, MRI, US). Built on the Mamba Selective State Space Model backbone, HoME addresses key challenges in medical imaging: modeling local-to-global spatial hierarchies, handling modality diversity, and achieving scalability for high-resolution 3D inputs. The architecture combines local expert routing with global context refinement through a hierarchical design that partitions sequences into groups, routes tokens to specialized experts for localized feature extraction, and aggregates outputs via a global layer for cross-group information fusion. Mamba-HoME demonstrates superior generalization and outperforms state-of-the-art models across multiple datasets while maintaining memory and computational efficiency.",
-      pdf: "https://arxiv.org/html/2507.06363v2",
+      description: "A hierarchical mixture-of-experts architecture built on Mamba for 3D medical image segmentation. The model combines local and global context across CT, MRI, and ultrasound data.",
+      website: "https://arxiv.org/abs/2507.06363",
+      pdf: "https://proceedings.neurips.cc/paper_files/paper/2025/file/8cdae43c4af3da3f157382f9ebc65c56-Paper-Conference.pdf",
       code: "https://github.com/gmum/MambaHoME",
       image: "/Mamba.png"
     },
@@ -29,7 +55,7 @@ export const publications: PublicationsByYear = {
       title: "Foundation model of electronic medical records for adaptive risk estimation",
       authors: "Pawel Renc, Michal K. Grzeszczyk, Nassim Oufattole, Deirdre Goode, Yugang Jia, Szymon Bieganski, Matthew B. A. McDermott, Jaroslaw Was, Anthony E. Samir, Jonathan W. Cunningham, David W. Bates, and Arkadiusz Sitek",
       venue: "GigaScience, Volume 14, 2025",
-      description: "We present ETHOS-ARES (Adaptive Risk Estimation System), a foundation model for electronic health records that learns comprehensive representations of patient health trajectories. Using a transformer-based architecture, ETHOS-ARES processes diverse medical data including vital signs, lab results, medications, and clinical events to perform zero-shot predictions of critical outcomes such as hospital mortality, ICU admission, and prolonged length of stay. The model leverages the MEDS (Medical Event Data Standard) format and demonstrates strong performance across multiple healthcare prediction tasks without task-specific fine-tuning, offering a flexible and powerful tool for clinical risk assessment and decision support.",
+      description: "ETHOS-ARES uses patient health timelines to estimate changing clinical risks without task-specific fine-tuning. The framework supports adaptive risk assessment from electronic health records using the MEDS data format.",
       pdf: "https://academic.oup.com/gigascience/article-pdf/doi/10.1093/gigascience/giaf107/64443371/giaf107.pdf",
       code: "https://github.com/ipolharvard/ethos-ares",
       website: "https://doi.org/10.1093/gigascience/giaf107",

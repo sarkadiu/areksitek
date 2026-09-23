@@ -1,64 +1,38 @@
 import { publications } from "@/data/publications";
+import { personalInfo } from "@/data/personal";
 import Image from "next/image";
 
 export default function Publications() {
   const years = Object.keys(publications).sort((a, b) => Number(b) - Number(a));
-
   return (
-    <section className="mb-12">
-      <h2 className="text-3xl font-bold mb-6">selected recent publications</h2>
-
-      {years.map((year) => (
-        <div key={year} className="mb-12">
-          <h3 className="text-2xl font-bold mb-6">{year}</h3>
-          
-          <ol className="space-y-8">
-            {publications[year].map((pub, index) => (
-              <li key={index} className="flex gap-4">
-                {pub.image && (
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={pub.image}
-                      alt={pub.title}
-                      width={120}
-                      height={90}
-                      className="rounded"
-                    />
+    <section className="publications" aria-labelledby="selected-publications">
+      <div className="section-heading">
+        <div><p className="eyebrow">Selected work</p><h2 id="selected-publications">Recent publications</h2></div>
+        <a href={personalInfo.googleScholar} className="text-link">All publications on Google Scholar <span aria-hidden="true">↗</span></a>
+      </div>
+      {years.map(year => (
+        <div key={year} className="publication-year">
+          <h3>{year}</h3>
+          <ol className="publication-list">
+            {publications[year].map(pub => (
+              <li key={pub.title}>
+                <article className="publication">
+                  <div className="publication-body">
+                    <p className="publication-venue">{pub.venue}{pub.type && <span> · {pub.type}</span>}</p>
+                    <h4><a href={pub.website || pub.pdf}>{pub.title}</a></h4>
+                    <p className="publication-authors">{pub.authors.split(/(Arkadiusz Sitek)/g).map((part, index) => part === "Arkadiusz Sitek" ? <strong key={index}>{part}</strong> : part)}</p>
+                    {pub.description && <p className="publication-description">{pub.description}</p>}
+                    <div className="publication-links">
+                      {pub.website && <a href={pub.website}>Read article <span aria-hidden="true">↗</span></a>}
+                      {pub.pdf && <a href={pub.pdf}>PDF</a>}
+                      {pub.code && <a href={pub.code}>Code</a>}
+                      {pub.pubmed && <a href={pub.pubmed}>PubMed</a>}
+                      {pub.video && <a href={pub.video}>Video</a>}
+                    </div>
+                    {pub.doi && <p className="publication-doi">DOI: <a href={`https://doi.org/${pub.doi}`}>{pub.doi}</a></p>}
                   </div>
-                )}
-                
-                <div className="flex-1">
-                  <h4 className="font-semibold text-lg mb-2">{pub.title}</h4>
-                  <p className="text-gray-700 mb-2">{pub.authors}</p>
-                  <p className="text-gray-600 italic mb-3">{pub.venue}</p>
-                  
-                  {pub.description && (
-                    <p className="text-gray-700 mb-4 text-sm leading-relaxed">{pub.description}</p>
-                  )}
-                  
-                  <div className="flex gap-3 text-sm">
-                    {pub.pdf && (
-                      <a href={pub.pdf} className="text-primary hover:underline">
-                        PDF
-                      </a>
-                    )}
-                    {pub.code && (
-                      <a href={pub.code} className="text-primary hover:underline">
-                        Code
-                      </a>
-                    )}
-                    {pub.website && (
-                      <a href={pub.website} className="text-primary hover:underline">
-                        Website
-                      </a>
-                    )}
-                    {pub.video && (
-                      <a href={pub.video} className="text-primary hover:underline">
-                        Video
-                      </a>
-                    )}
-                  </div>
-                </div>
+                  {pub.image && <Image src={pub.image} alt={`Figure from ${pub.title}`} width={160} height={120} className="publication-image" />}
+                </article>
               </li>
             ))}
           </ol>
@@ -67,4 +41,3 @@ export default function Publications() {
     </section>
   );
 }
-

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Arkadiusz Sitek - Research Scientist",
-  description: "Personal website of Arkadiusz Sitek - Research in AI-driven medical imaging and healthcare applications",
+  description: "Arkadiusz Sitek, research scientist and physicist at Massachusetts General Hospital and Harvard Medical School. Healthcare AI, patient health timelines, and medical imaging.",
 };
 
 export default function RootLayout({
@@ -17,8 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Navigation />
-        <main className="max-w-5xl mx-auto px-4 py-8">
+        <main id="main-content" className="site-container site-main">
           {children}
         </main>
         <Footer />

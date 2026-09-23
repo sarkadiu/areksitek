@@ -1,17 +1,12 @@
+import { personalInfo } from "@/data/personal";
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 border-t border-gray-200 mt-16">
-      <div className="max-w-5xl mx-auto px-4 py-6 text-center text-sm text-gray-600">
-        <p>
-          © Copyright {new Date().getFullYear()} Arkadiusz Sitek.{" "}
-          Last updated: {new Date().toLocaleDateString("en-US", { 
-            year: "numeric", 
-            month: "long", 
-            day: "numeric" 
-          })}.
-        </p>
+    <footer className="site-footer">
+      <div className="site-container footer-content">
+        <p>© {new Date().getFullYear()} {personalInfo.name}</p>
+        <p>Content updated <time dateTime="2026-09-23">September 23, 2026</time></p>
+        <a href={`mailto:${personalInfo.email}`}>Get in touch <span aria-hidden="true">↗</span></a>
       </div>
     </footer>
   );
 }
-
